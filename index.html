@@ -1,0 +1,201 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sistema de controle de estoque">
+    <title>Estoque Fácil | Controle de Estoque</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2 class="logo">Estoque<span>Fácil</span></h2>
+
+        <nav>
+            <a href="#" class="menu-item active">Dashboard</a>
+            <a href="#produtos" class="menu-item">Produtos</a>
+            <a href="#cadastro" class="menu-item">Cadastrar produto</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>Sistema de controle</p>
+            <small>Versão 1.0</small>
+        </div>
+    </aside>
+
+    <main class="main-content">
+
+        <header class="topbar">
+            <div>
+                <p class="subtitle">GERENCIAMENTO</p>
+                <h1>Controle de estoque</h1>
+            </div>
+
+            <span class="user-badge">Administrador</span>
+        </header>
+
+        <section class="welcome">
+            <h2>Visão geral</h2>
+            <p>Acompanhe os produtos e a situação do seu estoque.</p>
+        </section>
+
+        <section class="stats">
+            <article class="stat-card">
+                <p>Total de produtos</p>
+                <h2>0</h2>
+                <span>Produtos cadastrados</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Estoque baixo</p>
+                <h2 class="warning">0</h2>
+                <span>Precisam de reposição</span>
+            </article>
+
+            <article class="stat-card">
+                <p>Categorias</p>
+                <h2>0</h2>
+                <span>Categorias cadastradas</span>
+            </article>
+        </section>
+
+        <section class="panel" id="produtos">
+            <div class="panel-header">
+                <div>
+                    <h2>Produtos cadastrados</h2>
+                    <p>Consulte os produtos do seu estoque.</p>
+                </div>
+
+                <a href="#cadastro" class="button">
+                    + Novo produto
+                </a>
+            </div>
+
+            <div class="search-area">
+                <label for="pesquisa">Pesquisar produto</label>
+                <input
+                    type="search"
+                    id="pesquisa"
+                    placeholder="Digite o nome do produto..."
+                >
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Produto</th>
+                            <th>Categoria</th>
+                            <th>Preço</th>
+                            <th>Quantidade</th>
+                            <th>Situação</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="lista-produtos">
+                        <tr>
+                            <td colspan="6">Carregando produtos...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="panel form-panel" id="cadastro">
+            <div class="panel-header">
+                <div>
+                    <h2>Cadastrar produto</h2>
+                    <p>Preencha os dados para adicionar um produto.</p>
+                </div>
+            </div>
+
+            <form id="form-produto">
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label for="nome">Nome do produto</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            maxlength="150"
+                            placeholder="Ex.: Monitor"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="categoria">Categoria</label>
+                        <select
+                            id="categoria"
+                            name="categoria"
+                            required
+                        >
+                            <option value="">Selecione uma categoria</option>
+                            <option value="1">Informática</option>
+                            <option value="2">Papelaria</option>
+                            <option value="3">Acessórios</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preco">Preço (R$)</label>
+                        <input
+                            type="number"
+                            id="preco"
+                            name="preco"
+                            min="0.01"
+                            step="0.01"
+                            placeholder="0.00"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="quantidade">Quantidade</label>
+                        <input
+                            type="number"
+                            id="quantidade"
+                            name="quantidade"
+                            min="0"
+                            step="1"
+                            placeholder="0"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estoque_minimo">Estoque mínimo</label>
+                        <input
+                            type="number"
+                            id="estoque_minimo"
+                            name="estoque_minimo"
+                            min="0"
+                            step="1"
+                            value="5"
+                            required
+                        >
+                    </div>
+
+                </div>
+                <nav>
+                    <a href="index.html" class="menu-item active">Dashboard</a>
+                    <a href="#produtos" class="menu-item">Produtos</a>
+                    <a href="#cadastro" class="menu-item">Cadastrar produto</a>
+                </nav>
+            </form>
+        </section>
+
+        <footer>
+            <p>Estoque Fácil &copy; 2026 — Projeto de portfólio</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
+```
